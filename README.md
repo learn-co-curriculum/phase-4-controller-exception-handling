@@ -2,7 +2,8 @@
 
 ## Learning Goals
 
-- Use `rescue_from` to handle common errors in a reusable way
+- Use exception handling techniques like `rescue` and `rescue_from` in a Rails
+  controller
 
 ## Introduction
 
