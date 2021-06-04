@@ -19,6 +19,10 @@ rails s
 This will download all the dependencies for our app, set up the database, and
 run the Rails server.
 
+## Video Walkthrough
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/evlSdyGoE3s?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+
 ## DRYing Up Controller Code
 
 In the current implementation of our `BirdsController`, we've defined actions to
