@@ -8,7 +8,7 @@
 ## Introduction
 
 In this lesson, we'll finish work on our Bird API by refactoring the controller
-by adding in some helpful reusable error handling code. To get set up, run:
+to add in some helpful reusable error handling code. To get set up, run:
 
 ```sh
 bundle install
@@ -28,9 +28,9 @@ run the Rails server.
 In the current implementation of our `BirdsController`, we've defined actions to
 handle all five RESTful routes plus one additional custom route. You'll notice
 there is some common behavior between a lot of the methods. For all the routes
-that a route parameter (`/birds/:id`), we're using the ID in the params hash to
-look up a bird; if the bird is found, we're performing some action with it, and
-if not, we're sending an error message back.
+that include a route parameter (`/birds/:id`), we're using the ID in the params
+hash to look up a bird; if the bird is found, we're performing some action with
+it, and if not, we're sending an error message back.
 
 For example, have a look at the `show` and `update` actions:
 
@@ -168,7 +168,7 @@ Then make a request for an ID that doesn't exist in the database, like
 `localhost:3000/birds/9999`. You should see an error message like this:
 
 ```txt
-ActiveRecord::RecordNotFound (Couldn't find Bird with 'id'=999)
+ActiveRecord::RecordNotFound (Couldn't find Bird with 'id'=9999)
 ```
 
 We can handle this error in our controller method by using a
@@ -186,9 +186,9 @@ end
 Not only is this code shorter than the previous implementation, it also gives a
 clearer separation between the "happy path" of our code (no exceptions/errors)
 and the logic for handling exceptions/errors. Try making the same request in the
-browser to `localhost:3000/birds/9999` &mdash; now that we're handling the
-exception in the controller, you should see a 404 status code with the
-`{ "error": "Bird not found" }` JSON response instead of a 500 server error.
+browser to `localhost:3000/birds/9999` — now that we're handling the exception
+in the controller, you should see a 404 status code in the console with the `{
+"error": "Bird not found" }` JSON response instead of a 500 server error.
 
 We use the same approach to our `update` action as well:
 
