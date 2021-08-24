@@ -10,10 +10,10 @@
 In this lesson, we'll finish work on our Bird API by refactoring the controller
 to add in some helpful reusable error handling code. To get set up, run:
 
-```sh
-bundle install
-rails db:migrate db:seed
-rails s
+```console
+$ bundle install
+$ rails db:migrate db:seed
+$ rails s
 ```
 
 This will download all the dependencies for our app, set up the database, and
@@ -187,8 +187,7 @@ Not only is this code shorter than the previous implementation, it also gives a
 clearer separation between the "happy path" of our code (no exceptions/errors)
 and the logic for handling exceptions/errors. Try making the same request in the
 browser to `localhost:3000/birds/9999` — now that we're handling the exception
-in the controller, you should see a 404 status code in the console with the `{
-"error": "Bird not found" }` JSON response instead of a 500 server error.
+in the controller, you should see a 404 status code in the console with the `{ "error": "Bird not found" }` JSON response instead of a 500 server error.
 
 We use the same approach to our `update` action as well:
 
