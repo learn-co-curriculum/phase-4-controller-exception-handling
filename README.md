@@ -295,6 +295,16 @@ exception handling logic. It also lets us handle exceptions in a consistent way,
 so that users of our API get the same response for common errors, like not being
 able to find a particular resource.
 
+## Check For Understanding
+
+Before you move on, make sure you can answer the following questions:
+
+1. What is the difference in behavior between the `find` and `find_by` methods?
+   Why is that difference important for how we handle not-found errors?
+2. Looking at the final version of the controller code, what sequence of events
+   would happen if we tried to submit a `PATCH` request for a bird that doesn't
+   exist?
+
 ## Resources
 
 - [`rescue_from` method][rescue_from]
