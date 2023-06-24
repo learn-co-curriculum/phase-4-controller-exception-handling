@@ -14,7 +14,7 @@ class BirdsController < ApplicationController
 
   # GET /birds/:id
 def show
-  bird = Bird.find_by(id: params[:id])
+  bird = find_bird
   if bird
     render json: bird
   else
@@ -24,7 +24,7 @@ end
 
   # PATCH /birds/:id
   def update
-    bird = Bird.find_by(id: params[:id])
+    bird = find_bird
     if bird
       bird.update(bird_params)
       render json: bird
@@ -66,7 +66,7 @@ end
   end
 
   def find_bird
-    Bird.find_by(id: params[:id])
+    Bird.find(params[:id])
   end
 
 end
